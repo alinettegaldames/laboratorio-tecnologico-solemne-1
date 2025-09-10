@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3 – Parte 2</title>
+    <style>
+        .mapa path:hover {
+            filter: brightness(0.7)
+        }
+
+        .etiqueta {
+            width: 150px;
+            height: 50px;
+            background-color: white;
+            display: flex;
+            position: absolute;
+            pointer-events: none;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        .etiqueta p {
+            margin: auto;
+            margin-left: 10px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* ocupa toda la altura */
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="100" height="100">
+        <g class="mapa"></g>
+    </svg>
+    <div id="infoBox"></div>
+    <script src="./script.js" type="module"></script>
+</body>
+
+</html>
+<!--El cambio de los colores lo hacemos en la pagina de script.js ahi esta todo comentado y especificado donde debemos cambiar el nombre-->
