@@ -5,7 +5,7 @@ const width = 1000;
 const height = 1000;
 const innerRadius = 120;   // radio interior del anillo
 const outerRadius = 350;   // radio exterior del anillo
-const centralRadius = 100; // radio del círculo central
+const centralRadius = 100; // radio del circulo central
 
 const svg = d3.select("body")
   .append("svg")
@@ -18,11 +18,11 @@ const g = svg.append("g")
 const colorScale = d3.scaleOrdinal(d3.schemeCategory10)
   .domain(data.map(d => d.Año));
 
-// Pie layout
+
 const pie = d3.pie().value(1).sort(null);
 const arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
 
-// Círculo central
+// Circulo central
 g.append("circle")
   .attr("r", centralRadius)
   .attr("fill", "white")
@@ -59,9 +59,7 @@ arcs.append("text")
   .style("font-weight", "bold")
   .text(d => d.data.Año);
 
-// -------------------------
-// NUEVO: función de descomposición
-// -------------------------
+
 function descomponerValor(valor, simbolos) {
   const pelotitas = [];
   let restante = valor;
@@ -81,7 +79,7 @@ arcs.each(function (d) {
   const group = d3.select(this);
   const tasa = d.data["Tasa de accidentabilidad"];
 
-  // Descomponer en pelotitas (según simbología fija)
+  // Descomponer en pelotitas (segun simbologia fija)
   const radiosPelotitas = descomponerValor(tasa, [5, 4, 3, 2, 1, 0.5]);
 
   const nodes = radiosPelotitas.map(radio => {
@@ -95,7 +93,7 @@ arcs.each(function (d) {
     };
   });
 
-  // Dibujar conexiones entre pelotitas (2-3 por nodo)
+  // Dibujar conexiones entre pelotitas 
   for (let i = 0; i < nodes.length; i++) {
     const distances = nodes
       .map((n, j) => ({node: n, dist: Math.hypot(nodes[i].x - n.x, nodes[i].y - n.y), index: j}))
@@ -115,7 +113,7 @@ arcs.each(function (d) {
     }
   }
 
-  // Dibujar pelotitas más grandes
+  // Dibujar pelotitas mas grandes
   group.selectAll("circle")
     .data(nodes)
     .join("circle")
@@ -126,7 +124,7 @@ arcs.each(function (d) {
     .attr("opacity", 0.8);
 });
 
-// Hover interactividad
+
 arcs.on("mouseover", function (event, d) {
   d3.select(this).selectAll("circle")
     .transition().duration(200)
@@ -174,9 +172,7 @@ arcs.on("mouseover", function (event, d) {
   g.selectAll(".label-group").remove();
 });
 
-// -------------------------
-// Simbología fija abajo
-// -------------------------
+
 const legendValues = [5, 4, 3, 2, 1, 0.5];
 const legend = svg.append("g")
   .attr("transform", `translate(${width / 2 - 150}, ${height - 80})`);
@@ -206,7 +202,7 @@ legendGroup.append("text")
   .style("font-family", "Helvetica, sans-serif")
   .text(d => d);
 
-  // Título en la parte superior del gráfico
+  // Titulo en la parte superior del grafico
 svg.append("text")
   .attr("x", width / 2)
   .attr("y", 40) // margen superior
