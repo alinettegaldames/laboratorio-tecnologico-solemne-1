@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="Alinette"
+    />
+</head>
+
+
+<body>
+  <h1 class="title">Chat</h1>
+
+ 
+  <div class="chat-layout">
+
+   <!--Desplegar el div class="chat-list" para poder ver la estructura de los chat Falsos-->
+    <div class="chat-list">
+      <div class="chat-item">
+        <img src="./img/gato1.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Profesor Programación</h3>
+          <p>Ojalá les funcione</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/oveja1.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Profesor Gym</h3>
+          <p>Nos vemos en el entrenamiento</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/rana.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Rana Elegante</h3>
+          <p>Que elegancia...</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/coco.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Cocodrilo Gamer</h3>
+          <p>Su Buscaminas...</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/perro1.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Perro Uno!</h3>
+          <p>Jugamos UNO?</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/gato2.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Gato Tonotono</h3>
+          <p>Nos vemos Tonotonos</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/gatoo.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Gato Feliiiii</h3>
+          <p>Toy feliz Como Lombriz...</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/patu.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Pato Mafioso</h3>
+          <p>Ya sabes que me debes Migajas...</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/patolisa.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>PatoLisa</h3>
+          <p>Es Cine...</p>
+        </div>
+      </div>
+    
+
+    <div class="chat-item">
+        <img src="./img/syduck.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Syduck Otaku</h3>
+          <p>Syduuuuck.....</p>
+        </div>
+      </div>
+
+      <div class="chat-item">
+        <img src="./img/capibara1.jpg" alt="Foto contacto">
+        <div class="chat-info">
+          <h3>Capibara zen...</h3>
+          <p>Manten la calma, pequeño capibara...</p>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--Aqui ponemos la estructura para que funcione el chat -->
+    <div class="main">
+      <div class="name">
+        <span><i class="far fa-user"></i>
+         
+        </span>
+        <input type="text" id="name-input" class="name-input" value="Invitado" maxlength="20">
+      </div>
+
+      <ul class="message-container" id="message-container"></ul>
+
+      <form class="message-form" id="message-form">
+        <input type="text" name="message" id="message-input" class="message-input"/>
+        <div class="v-divider"></div>
+        <button type="submit" class="send-button">
+          <span><i class="fas fa-paper-plane" style="color: blue;"></i></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js"
+    integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg=="
+    crossorigin="Alinette"
+  ></script>
+  <script src="script.js"></script>
+</body>
+
+
+</html>
